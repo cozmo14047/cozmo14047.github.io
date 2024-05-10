@@ -45,3 +45,8 @@ footer#contact {
     font-weight: bold;
     text-align: center;
 }
+
+/* Hide the tab by default */
+.hidden {
+    display: none;
+}
