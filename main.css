@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,13 +8,20 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -22,31 +30,64 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
 }
 
 section {
-    padding: 50px;
+    padding: 20px;
 }
 
-footer#contact {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+footer {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
 }
 
-#countdown {
-    font-size: 36px;
-    font-weight: bold;
+/* Countdown Timer */
+#welcome-container {
     text-align: center;
+    margin-top: 50px;
 }
 
-/* Hide the tab by default */
+/* Hidden class */
 .hidden {
     display: none;
+}
+
+/* Button Styles */
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Install Guide Styles */
+ol {
+    margin-left: 30px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0;
+    }
 }
