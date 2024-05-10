@@ -35,17 +35,29 @@
 
 <!-- JavaScript for Countdown Timer -->
 <script>
-    // Set the target date 3 weeks, 1 day, and 17 minutes from now
-    var targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 21); // 3 weeks
-    targetDate.setMinutes(targetDate.getMinutes() + 17); // 17 minutes
-    targetDate.setDate(targetDate.getDate() + 1); // 1 day
+    // Function to calculate remaining time until target date
+    function calculateTimeDifference(targetDate) {
+        var now = new Date();
+        return targetDate - now;
+    }
 
     // Function to update the countdown
     function updateCountdown() {
-        var now = new Date();
-        var timeDifference = targetDate - now;
+        var targetDate;
+        var savedTargetDate = localStorage.getItem('cozmoTargetDate');
+        
+        if (savedTargetDate) {
+            targetDate = new Date(savedTargetDate);
+        } else {
+            targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 21); // 3 weeks
+            targetDate.setMinutes(targetDate.getMinutes() + 17); // 17 minutes
+            targetDate.setDate(targetDate.getDate() + 1); // 1 day
+            localStorage.setItem('cozmoTargetDate', targetDate);
+        }
 
+        var timeDifference = calculateTimeDifference(targetDate);
+        
         var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
         var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
