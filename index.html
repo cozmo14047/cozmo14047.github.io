@@ -17,8 +17,8 @@
             <li><a href="features.html">Features</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li id="codeTab" class="hidden"><a href="code.html">Code</a></li> <!-- Hidden tab for code -->
-            <li id="installTab" class="hidden"><a href="install.html">How to Install</a></li> <!-- Hidden tab for installation -->
+            <li id="codeTab" style="display: none;"><a href="code.html">Code</a></li> <!-- Hidden tab for code -->
+            <li id="installTab" style="display: none;"><a href="install.html">How to Install</a></li> <!-- Hidden tab for installation -->
         </ul>
     </nav>
 </header>
@@ -69,8 +69,8 @@
             document.getElementById("countdown").innerHTML = "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
         } else {
             document.getElementById("countdown").style.display = "none"; // Hide countdown when finished
-            document.getElementById("codeTab").classList.remove("hidden"); // Show code tab
-            document.getElementById("installTab").classList.remove("hidden"); // Show install tab
+            document.getElementById("codeTab").style.display = "inline"; // Show code tab
+            document.getElementById("installTab").style.display = "inline"; // Show install tab
         }
     }
 
