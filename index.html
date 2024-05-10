@@ -17,6 +17,7 @@
             <li><a href="features.html">Features</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="code.html">Code</a></li> <!-- New tab for code -->
         </ul>
     </nav>
 </header>
@@ -63,11 +64,10 @@
         var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown").innerHTML = "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-        // If the countdown is over, display a message
-        if (timeDifference < 0) {
-            document.getElementById("countdown").innerHTML = "Countdown over!";
+        if (timeDifference > 0) {
+            document.getElementById("countdown").innerHTML = "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        } else {
+            document.getElementById("countdown").style.display = "none"; // Hide countdown when finished
         }
     }
 
