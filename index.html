@@ -24,6 +24,7 @@
 <section>
     <h2>Welcome!</h2>
     <p>Welcome to the Cozmo AI project website. Here you can learn all about our efforts to enhance the capabilities of Anki Cozmo.</p>
+    <div id="countdown"></div>
 </section>
 
 <footer id="contact">
@@ -31,6 +32,36 @@
     <p>If you have any questions or suggestions, feel free to reach out to us via email:</p>
     <p>Email: info@cozmoaiproject.com</p>
 </footer>
+
+<!-- JavaScript for Countdown Timer -->
+<script>
+    // Set the target date 3 weeks, 1 day, and 17 minutes from now
+    var targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 21); // 3 weeks
+    targetDate.setMinutes(targetDate.getMinutes() + 17); // 17 minutes
+    targetDate.setDate(targetDate.getDate() + 1); // 1 day
+
+    // Function to update the countdown
+    function updateCountdown() {
+        var now = new Date();
+        var timeDifference = targetDate - now;
+
+        var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // If the countdown is over, display a message
+        if (timeDifference < 0) {
+            document.getElementById("countdown").innerHTML = "Countdown over!";
+        }
+    }
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
 
 </body>
 </html>
